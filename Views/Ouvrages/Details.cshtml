@@ -1,0 +1,42 @@
+﻿@model Exercice1_APP_MVC.Models.Ouvrage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ouvrage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titre_Ouv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titre_Ouv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nb_Exp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nb_Exp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Num_Ouv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

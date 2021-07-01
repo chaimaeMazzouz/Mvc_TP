@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelOuvrage.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelOuvrageStoreContainer">
+    <EntitySet Name="OuvrageSet" EntityType="ModelOuvrage.Store.OuvrageSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="OuvrageSet">
+    <Key>
+      <PropertyRef Name="Num_Ouv" />
+    </Key>
+    <Property Name="Num_Ouv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre_Ouv" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PU" Type="float" Nullable="false" />
+    <Property Name="Nb_Exp" Type="int" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelOuvrage" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelOuvrageContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OuvrageSet" EntityType="ModelOuvrage.Ouvrage" />
+        </EntityContainer>
+        <EntityType Name="Ouvrage">
+          <Key>
+            <PropertyRef Name="Num_Ouv" />
+          </Key>
+          <Property Name="Num_Ouv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre_Ouv" Type="String" Nullable="false" />
+          <Property Name="PU" Type="Double" Nullable="false" />
+          <Property Name="Nb_Exp" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelOuvrageStoreContainer" CdmEntityContainer="ModelOuvrageContainer">
+    <EntitySetMapping Name="OuvrageSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelOuvrage.Ouvrage)">
+        <MappingFragment StoreEntitySet="OuvrageSet">
+          <ScalarProperty Name="Num_Ouv" ColumnName="Num_Ouv" />
+          <ScalarProperty Name="Titre_Ouv" ColumnName="Titre_Ouv" />
+          <ScalarProperty Name="PU" ColumnName="PU" />
+          <ScalarProperty Name="Nb_Exp" ColumnName="Nb_Exp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
